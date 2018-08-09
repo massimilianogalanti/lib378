@@ -1,0 +1,45 @@
+lib378 - Embeddable Preditive Text Library
+
+DESCRIPTION:
+This library provides text prediction features via a simple API.
+
+LICENSE:
+LGPL
+
+COPYRIGHT & AUTHOR:
+2007, Massimiliano Galanti <massi@sourceforge.net>
+
+COMPILING:
+make all
+
+TESTING:
+Create sample dictionary with:
+
+./compress <dictionary.ascii>
+
+where dictionary.ascii is an alphabetically sorted list of words.
+
+Run sample applications like this:
+
+cd lib378
+LD_LIBRARY_PATH=./ ./phone-example
+
+API:
+
+// dictionary ops
+int l378_dictionary_open( l378_t*, const char* );
+int l378_dictionary_close( l378_t* );
+
+// set keymap
+int l378_keymap_set( l378_t*, const char* );
+
+void l378_pushc( char )
+void l378_popc( void )
+
+char* l378_match( void )
+char* l378_matche( void )
+
+char* l378_complete( void )
+
+void l378_confirm( void )
+void l378_clear( void )
