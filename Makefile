@@ -15,7 +15,7 @@ LIBNAME = lib378.so
 all: compress $(LIBNAME) phone-example dictionary.bin.bz2
 
 phone-example: phone-example.c $(LIBNAME)
-	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -L./ -l378 $< -o $@
+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) -L./ $< -o $@ -l378 $(LDFLAGS) 
 
 $(LIBNAME): 378.h 378.c
 	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) $(LDFLAGS) -shared 378.c -o $@
